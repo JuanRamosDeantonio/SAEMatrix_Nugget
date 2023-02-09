@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SkTAPtILgyiUsnseiecEJ0Ui3RA8sovfy1xP/26sykHfillr1wdd254o95Q9AW/GZgOdSXTalyRSyMLPK1kSeQ==",
+  "dgSpecHash": "KkEf8gdqXPFm0dmAIT/MYx0BmqCNMcqQ2g5/BVxAF03mJtO/ltSDmiFvNfY14ojUH2oylLIvgR89jm6+w9LW2A==",
   "success": true,
-  "projectFilePath": "C:\\OSCAR\\CLIENTS\\SAE\\Codes\\SAE.Matrix.Nugget\\SaeMatrix.Common\\SaeMatrix.Common.csproj",
+  "projectFilePath": "C:\\OSCAR\\CLIENTS\\SAE\\Codes\\SAE.Matrix.Nugget\\SaeMatrix.Common\\SAE.Matrix.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oscar_Betancourt\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Oscar_Betancourt\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

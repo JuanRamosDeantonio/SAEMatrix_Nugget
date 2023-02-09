@@ -1,0 +1,12 @@
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\bin\Debug\net7.0\SAE.Matrix.Common.deps.json
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\bin\Debug\net7.0\SAE.Matrix.Common.dll
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\bin\Debug\net7.0\SAE.Matrix.Common.pdb
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\SAE.Matrix.Common.csproj.AssemblyReference.cache
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\SAE.Matrix.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\SAE.Matrix.Common.AssemblyInfoInputs.cache
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\SAE.Matrix.Common.AssemblyInfo.cs
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\SAE.Matrix.Common.csproj.CoreCompileInputs.cache
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\SAE.Matrix.Common.dll
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\refint\SAE.Matrix.Common.dll
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\SAE.Matrix.Common.pdb
+C:\OSCAR\CLIENTS\SAE\Codes\SAE.Matrix.Nugget\SaeMatrix.Common\obj\Debug\net7.0\ref\SAE.Matrix.Common.dll

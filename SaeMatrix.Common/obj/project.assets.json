@@ -3613,9 +3613,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\OSCAR\\CLIENTS\\SAE\\Codes\\SAE.Matrix.Nugget\\SaeMatrix.Common\\SaeMatrix.Common.csproj",
-      "projectName": "SaeMatrix.Common",
-      "projectPath": "C:\\OSCAR\\CLIENTS\\SAE\\Codes\\SAE.Matrix.Nugget\\SaeMatrix.Common\\SaeMatrix.Common.csproj",
+      "projectUniqueName": "C:\\OSCAR\\CLIENTS\\SAE\\Codes\\SAE.Matrix.Nugget\\SaeMatrix.Common\\SAE.Matrix.Common.csproj",
+      "projectName": "SAE.Matrix.Common",
+      "projectPath": "C:\\OSCAR\\CLIENTS\\SAE\\Codes\\SAE.Matrix.Nugget\\SaeMatrix.Common\\SAE.Matrix.Common.csproj",
       "packagesPath": "C:\\Users\\Oscar_Betancourt\\.nuget\\packages\\",
       "outputPath": "C:\\OSCAR\\CLIENTS\\SAE\\Codes\\SAE.Matrix.Nugget\\SaeMatrix.Common\\obj\\",
       "projectStyle": "PackageReference",
