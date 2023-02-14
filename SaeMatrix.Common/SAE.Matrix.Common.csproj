@@ -5,9 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>Saesas.Matrix.CommonLibrary</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>saesas</Authors>
-    <Company>saesas</Company>
+    <Version>1.0.1</Version>
+    <Authors>saesas.gov.co</Authors>
+    <Company>saesas.gov.co</Company>
   </PropertyGroup>
 
   <ItemGroup>
