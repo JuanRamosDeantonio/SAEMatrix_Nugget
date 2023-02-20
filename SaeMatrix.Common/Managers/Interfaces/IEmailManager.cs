@@ -10,6 +10,6 @@ namespace SaeMatrix.Common.Managers.Interfaces
 {
     public interface IEmailManager
     {
-        SendEmailResponse SendEmail(SendEmailRequest model);
+        Task<SendEmailResponse> SendEmailAsync(SendEmailRequest model);
     }
 }

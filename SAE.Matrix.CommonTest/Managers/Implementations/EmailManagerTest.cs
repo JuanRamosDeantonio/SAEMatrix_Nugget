@@ -30,7 +30,7 @@ namespace SAE.Matrix.CommonTest.Managers.Implementations
         }
 
         [Test]
-        public void SendEmailOKTest()
+        public async Task SendEmailOKTest()
         {
             //Arrange
             SendEmailRequest model = new SendEmailRequest()
@@ -43,13 +43,13 @@ namespace SAE.Matrix.CommonTest.Managers.Implementations
             };
 
             //Act
-            SendEmailResponse result = _current.SendEmail(model);
+            SendEmailResponse result = await _current.SendEmailAsync(model);
             //Assert
             Assert.AreEqual(true, result.Result);
         }
 
         [Test]
-        public void SendEmailAttachmentInvalidTest()
+        public async Task SendEmailAttachmentInvalidTest()
         {
             //Arrange
             SendEmailRequest model = new SendEmailRequest()
@@ -63,13 +63,13 @@ namespace SAE.Matrix.CommonTest.Managers.Implementations
             };
 
             //Act
-            SendEmailResponse result = _current.SendEmail(model);
+            SendEmailResponse result = await _current.SendEmailAsync(model);
             //Assert
             Assert.AreNotEqual(null, result.Message);
         }
 
         [Test]
-        public void SendEmailWithExceptionTest()
+        public async Task SendEmailWithExceptionTest()
         {
             //Arrange
             SendEmailRequest model = new SendEmailRequest()
@@ -83,7 +83,7 @@ namespace SAE.Matrix.CommonTest.Managers.Implementations
             };
 
             //Act
-            SendEmailResponse result = _current.SendEmail(model);
+            SendEmailResponse result = await _current.SendEmailAsync(model);
             //Assert
             Assert.AreNotEqual(null, result.Message);
         }

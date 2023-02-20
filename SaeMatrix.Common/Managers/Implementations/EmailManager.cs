@@ -17,7 +17,7 @@ namespace SaeMatrix.Common.Managers.Implementations
             _configuration= configuration;
         }
 
-        public SendEmailResponse SendEmail(SendEmailRequest model)
+        public async Task<SendEmailResponse> SendEmailAsync(SendEmailRequest model)
         {
             SendEmailResponse response = new SendEmailResponse();
             try
@@ -68,7 +68,7 @@ namespace SaeMatrix.Common.Managers.Implementations
                     client.Credentials = new NetworkCredential(_configuration.GetSection("Smtp:UserName").Value, _configuration.GetSection("Smtp:Password").Value);
                     client.EnableSsl = bool.Parse(_configuration.GetSection("Smtp:EnableSsl").Value);
 
-                    client.Send(mailMessage);
+                    await client.SendMailAsync(mailMessage);
                     response.Result = true;
                 }
             }
