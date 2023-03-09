@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SaeMatrix.Common.Entities
+﻿namespace SAE.Matrix.Common.Entities
 {
     public class SendEmailRequest
     {

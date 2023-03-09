@@ -1,4 +1,4 @@
-﻿namespace SaeMatrix.Common.Entities
+﻿namespace SAE.Matrix.Common.Entities
 {
     public class RequestDto
     {

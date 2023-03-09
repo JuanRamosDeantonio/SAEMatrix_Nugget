@@ -1,15 +1,16 @@
 using Microsoft.Extensions.Configuration;
 using Moq;
-using SAE.Matrix.Common.Entities;
-using SaeMatrix.Common.Entities;
-using SaeMatrix.Common.Managers.Implementations;
-using SaeMatrix.Common.Managers.Interfaces;
+
+
 
 namespace SAE.Matrix.CommonTest.Managers.Implementations
 {
+    using Common.Entities;
+    using Common.Managers.Interfaces;
+    using Common.Managers.Implementations;
+
     public class EmailManagerTest
     {
-        //private readonly Mock<IConfiguration> _configuration = new Mock<IConfiguration>();
         private ConfigurationBuilder _configuration;
         IEmailManager _current;
 
@@ -19,10 +20,22 @@ namespace SAE.Matrix.CommonTest.Managers.Implementations
             _configuration = new ConfigurationBuilder();
             _configuration.AddInMemoryCollection(new Dictionary<string, string>()
             {
+                //{ "Smtp:Host", "smtp.office365.com" },
+                //{ "Smtp:Port", "587" },
+                //{ "Smtp:UserName", "AdministradorIMS@saesas.gov.co" },
+                //{ "Smtp:Password", "4pl1c4c10n3sS43" },
+                //{ "Smtp:EnableSsl", "True" }
+
+                //{ "Smtp:Host", "smtp.gmail.com" },
+                //{ "Smtp:Port", "465" },
+                //{ "Smtp:UserName", "indraprojecttesting@gmail.com" },
+                //{ "Smtp:Password", "Indra_2023*" },
+                //{ "Smtp:EnableSsl", "True" }
+
                 { "Smtp:Host", "smtp.office365.com" },
                 { "Smtp:Port", "587" },
-                { "Smtp:UserName", "AdministradorIMS@saesas.gov.co" },
-                { "Smtp:Password", "4pl1c4c10n3sS43" },
+                { "Smtp:UserName", "indraprojecttesting@hotmail.com" },
+                { "Smtp:Password", "Indra_2023*" },
                 { "Smtp:EnableSsl", "True" }
             });
 
@@ -37,7 +50,9 @@ namespace SAE.Matrix.CommonTest.Managers.Implementations
             {
                 IsBodyHtml = true,
                 Subject = "Pruebas",
-                From = "AdministradorIMS@saesas.gov.co",
+                //From = "AdministradorIMS@saesas.gov.co",
+                //From = "indraprojecttesting@gmail.com",
+                From = "indraprojecttesting@hotmail.com",
                 To = "oabetancourt@indracompany.com",
                 Body = "Probando NUnit Test"
             };

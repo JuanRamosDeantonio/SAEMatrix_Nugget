@@ -1,13 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
-using SAE.Matrix.Common.Entities;
-using SaeMatrix.Common.Entities;
-using SaeMatrix.Common.Managers.Interfaces;
 using System.Net;
 using System.Net.Mail;
-using static SaeMatrix.Common.Entities.SendEmailRequest;
 
-namespace SaeMatrix.Common.Managers.Implementations
+namespace SAE.Matrix.Common.Managers.Implementations
 {
+    using Entities;
+    using Interfaces;
+    using static Entities.SendEmailRequest;
+
     public class EmailManager : IEmailManager
     {
         private readonly IConfiguration _configuration;
@@ -67,7 +67,7 @@ namespace SaeMatrix.Common.Managers.Implementations
                     client.Port = int.Parse(_configuration.GetSection("Smtp:Port").Value);
                     client.Credentials = new NetworkCredential(_configuration.GetSection("Smtp:UserName").Value, _configuration.GetSection("Smtp:Password").Value);
                     client.EnableSsl = bool.Parse(_configuration.GetSection("Smtp:EnableSsl").Value);
-
+                    
                     await client.SendMailAsync(mailMessage);
                     response.Result = true;
                 }

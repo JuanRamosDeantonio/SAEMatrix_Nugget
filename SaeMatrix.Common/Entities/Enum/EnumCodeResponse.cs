@@ -1,4 +1,4 @@
-﻿namespace SaeMatrix.Common.Entities.Enum
+﻿namespace SAE.Matrix.Common.Entities.Enum
 {
     public enum EnumCodeResponse
     {

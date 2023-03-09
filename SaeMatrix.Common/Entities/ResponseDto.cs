@@ -1,6 +1,6 @@
-﻿using SaeMatrix.Common.Entities.Enum;
+﻿using SAE.Matrix.Common.Entities.Enum;
 
-namespace SaeMatrix.Common.Entities
+namespace SAE.Matrix.Common.Entities
 {
     public class ResponseDto<T>
     {

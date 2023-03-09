@@ -1,7 +1,7 @@
-﻿using SaeMatrix.Common.Entities;
-
-namespace SaeMatrix.Common.Routine.Contracts
+﻿namespace SAE.Matrix.Common.Routine.Contracts
 {
+    using Entities;
+
     public interface ISenderManager
     {
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Net;
 
-namespace SaeMatrix.Common.Entities
+namespace SAE.Matrix.Common.Entities
 {
     public class ResponseBase<T> : ICloneable
     {

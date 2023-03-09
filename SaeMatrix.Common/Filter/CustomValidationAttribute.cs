@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using SaeMatrix.Common.Entities;
-using SaeMatrix.Common.Entities.Enum;
 
-namespace SaeMatrix.Common.Filter
+namespace SAE.Matrix.Common.Filter
 {
+    using Entities;
+    using Entities.Enum;
+
     public class CustomValidationAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext context)

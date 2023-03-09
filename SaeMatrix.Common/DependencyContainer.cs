@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SaeMatrix.Common.Managers.Implementations;
-using SaeMatrix.Common.Managers.Interfaces;
 
 namespace SAE.Matrix.Common
 {
+    using Managers.Implementations;
+    using Managers.Interfaces;
+
     public static class DependencyContainer
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)

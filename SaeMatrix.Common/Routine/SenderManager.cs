@@ -2,15 +2,16 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
-using SaeMatrix.Common.Entities;
-using SaeMatrix.Common.Routine.Contracts; 
 using System.Net;
 
-namespace SaeMatrix.Common.Routine
+namespace SAE.Matrix.Common.Routine
 {
+    using Entities;
+    using Common;
+    using Contracts;
+
     public class SenderManager : ISenderManager
     {
-
         private const string Mediatypejson = "application/json";
         private readonly IConfiguration _config;
         private readonly IHttpClientFactory _httpFactory;
@@ -95,11 +96,6 @@ namespace SaeMatrix.Common.Routine
             {
                 responseBase.Data = JsonConvert.DeserializeObject<T>(contentResponseCopy);
             }
-            else if (typeof(T).IsPrimitive || typeof(T) == typeof(string))
-            {
-                contentResponse = contentResponse.Replace("\"", "");
-                responseBase.Data = (T)Convert.ChangeType(contentResponse, type);
-            }
             else if (contentResponse.StartsWith("{") || contentResponse.EndsWith("}"))
             {
                 responseBase = JsonConvert.DeserializeObject<ResponseBase<T>>(contentResponse);
@@ -107,6 +103,11 @@ namespace SaeMatrix.Common.Routine
             else if (contentResponse.StartsWith("[") || contentResponse.EndsWith("]"))
             {
                 responseBase = JsonConvert.DeserializeObject<ResponseBase<T>>(contentResponse);
+            }
+            else if (typeof(T).IsPrimitive || typeof(T) == typeof(string))
+            {
+                contentResponse = contentResponse.Replace("\"", "");
+                responseBase.Data = (T)Convert.ChangeType(contentResponse, type);
             }
             else
             {

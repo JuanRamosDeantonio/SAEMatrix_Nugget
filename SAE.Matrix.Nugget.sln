@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAE.Matrix.Common", "SaeMatrix.Common\SAE.Matrix.Common.csproj", "{F6BAB21E-B17C-4C44-A0D5-219A717DF9BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAE.Matrix.CommonTest", "SAE.Matrix.CommonTest\SAE.Matrix.CommonTest.csproj", "{4352B8FC-B00A-4360-A6A0-007BA7215930}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAE.Matrix.CommonTest", "SAE.Matrix.CommonTest\SAE.Matrix.CommonTest.csproj", "{4352B8FC-B00A-4360-A6A0-007BA7215930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAE.Matrix.ConsoleApp", "SAE.Matrix.ConsoleApp\SAE.Matrix.ConsoleApp.csproj", "{BE188DC3-0EAA-4AD2-B008-BC474F5AF4E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4352B8FC-B00A-4360-A6A0-007BA7215930}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4352B8FC-B00A-4360-A6A0-007BA7215930}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4352B8FC-B00A-4360-A6A0-007BA7215930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE188DC3-0EAA-4AD2-B008-BC474F5AF4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE188DC3-0EAA-4AD2-B008-BC474F5AF4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE188DC3-0EAA-4AD2-B008-BC474F5AF4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE188DC3-0EAA-4AD2-B008-BC474F5AF4E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
