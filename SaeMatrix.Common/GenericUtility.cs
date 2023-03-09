@@ -1,15 +1,13 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
+using System.Net;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SAE.Matrix.Common
 {
+    using Entities;
+
     public static class GenericUtility
     {
         #region Converts
@@ -51,7 +49,6 @@ namespace SAE.Matrix.Common
                 yield return value;
             }
         }
-
         public static bool IsEmpty<T>(this List<T> data)
         {
             return data == null || data.Count == 0;
@@ -60,7 +57,6 @@ namespace SAE.Matrix.Common
         {
             return string.IsNullOrWhiteSpace(me);
         }
-
         public static bool IsEmpty(this object me)
         {
             return me == null;
@@ -75,7 +71,6 @@ namespace SAE.Matrix.Common
             titlecase = Regex.Replace(titlecase, @"('S)\b", m => m.Value.ToLower());
             return titlecase;
         }
-
         public static DateTime ToDateTime(this string data)
         {
             if (!string.IsNullOrWhiteSpace(data) && DateTime.TryParse(data, out _))
@@ -144,12 +139,10 @@ namespace SAE.Matrix.Common
             }
             return null;
         }
-
         public static bool IsValidFormat(this string data, string regularExpression)
         {
             return Regex.IsMatch(data, regularExpression);
         }
-
         public static string GetSerializedEntity<T>(this T entity)
         {
             try
@@ -157,6 +150,17 @@ namespace SAE.Matrix.Common
                 return JsonConvert.SerializeObject(entity);
             }
             catch (Exception) { return null; }
+        }
+        public static ResponseBase<T> ResponseBaseCatch<T>(bool validation, Exception ex, HttpStatusCode status)
+        {
+            ResponseBase<T> retval = new ResponseBase<T>();
+            if (validation)
+            {
+                retval.Code = (int)status;
+                retval.Message = ex.Message;
+            }
+            
+            return retval;
         }
 
         #endregion

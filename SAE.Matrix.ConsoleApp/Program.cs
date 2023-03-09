@@ -2,11 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SAE.Matrix.Common.Contracts.Managers;
 using SAE.Matrix.Common.Entities;
-using SAE.Matrix.Common.Managers.Implementations;
-using SAE.Matrix.Common.Managers.Interfaces;
-using SAE.Matrix.Common.Routine;
-using SAE.Matrix.Common.Routine.Contracts;
+using SAE.Matrix.Common.Implementations.Managers;
 
 Console.WriteLine("Hello, World!");
 

@@ -1,4 +1,4 @@
-﻿namespace SAE.Matrix.Common.Managers.Interfaces
+﻿namespace SAE.Matrix.Common.Contracts.Managers
 {
     using Entities;
 

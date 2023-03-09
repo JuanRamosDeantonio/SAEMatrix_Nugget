@@ -6,8 +6,8 @@ using Moq;
 namespace SAE.Matrix.CommonTest.Managers.Implementations
 {
     using Common.Entities;
-    using Common.Managers.Interfaces;
-    using Common.Managers.Implementations;
+    using Common.Contracts.Managers;
+    using Common.Implementations.Managers;
 
     public class EmailManagerTest
     {

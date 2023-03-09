@@ -3,8 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace SAE.Matrix.Common
 {
-    using Managers.Implementations;
-    using Managers.Interfaces;
+    using Contracts.Managers;
+    using Implementations.Managers;
 
     public static class DependencyContainer
     {

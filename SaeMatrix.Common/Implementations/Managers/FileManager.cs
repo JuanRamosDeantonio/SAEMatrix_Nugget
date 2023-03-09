@@ -2,11 +2,10 @@
 using Newtonsoft.Json;
 using System.Text;
 
-namespace SAE.Matrix.Common.Managers.Implementations
+namespace SAE.Matrix.Common.Implementations.Managers
 {
     using Entities;
-    using Interfaces;
-    using Routine.Contracts;
+    using Contracts.Managers;
 
     public class FileManager : IFileManager
     {
@@ -29,7 +28,7 @@ namespace SAE.Matrix.Common.Managers.Implementations
             {
                 Method = HttpMethod.Post,
                 Content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, @"application/json"),
-                RequestUri= new Uri($@"{baseUrlService}/File")
+                RequestUri = new Uri($@"{baseUrlService}/File")
             };
 
             ResponseBase<bool> result = await _senderManager.SendRequest<bool>(requestMessage, "FileService");

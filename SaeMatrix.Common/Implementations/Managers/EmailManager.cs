@@ -2,10 +2,10 @@
 using System.Net;
 using System.Net.Mail;
 
-namespace SAE.Matrix.Common.Managers.Implementations
+namespace SAE.Matrix.Common.Implementations.Managers
 {
     using Entities;
-    using Interfaces;
+    using Contracts.Managers;
     using static Entities.SendEmailRequest;
 
     public class EmailManager : IEmailManager
@@ -14,25 +14,25 @@ namespace SAE.Matrix.Common.Managers.Implementations
 
         public EmailManager(IConfiguration configuration)
         {
-            _configuration= configuration;
+            _configuration = configuration;
         }
 
         public async Task<SendEmailResponse> SendEmailAsync(SendEmailRequest model)
         {
             SendEmailResponse response = new SendEmailResponse();
             try
-			{
+            {
                 // Validaciones
                 if (string.IsNullOrWhiteSpace(model.From)) response.Message += "Model.From invalido|";
                 if (string.IsNullOrWhiteSpace(model.To)) response.Message += "Model.To invalido|";
                 if (string.IsNullOrWhiteSpace(model.Subject)) response.Message += "Model.Subject invalido|";
                 if (string.IsNullOrWhiteSpace(model.Body)) response.Message += "Model.Body invalido|";
 
-                if(model.Attachments != null) 
+                if (model.Attachments != null)
                 {
                     foreach (SendEmailAttachment attachment in model.Attachments)
                     {
-                        if(string.IsNullOrWhiteSpace(attachment.Name) || string.IsNullOrWhiteSpace(attachment.Base64))
+                        if (string.IsNullOrWhiteSpace(attachment.Name) || string.IsNullOrWhiteSpace(attachment.Base64))
                         {
                             response.Message += "Archivos adjuntos invalidos|";
                             break;
@@ -67,13 +67,13 @@ namespace SAE.Matrix.Common.Managers.Implementations
                     client.Port = int.Parse(_configuration.GetSection("Smtp:Port").Value);
                     client.Credentials = new NetworkCredential(_configuration.GetSection("Smtp:UserName").Value, _configuration.GetSection("Smtp:Password").Value);
                     client.EnableSsl = bool.Parse(_configuration.GetSection("Smtp:EnableSsl").Value);
-                    
+
                     await client.SendMailAsync(mailMessage);
                     response.Result = true;
                 }
             }
-			catch (Exception ex)
-			{
+            catch (Exception ex)
+            {
                 response.Message = ex.Message;
             }
             return response;

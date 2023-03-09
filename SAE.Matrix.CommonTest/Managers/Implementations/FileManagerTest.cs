@@ -4,9 +4,8 @@ using Moq;
 namespace SAE.Matrix.CommonTest.Managers.Implementations
 {
     using Common.Entities;
-    using Common.Managers.Implementations;
-    using Common.Managers.Interfaces;
-    using Common.Routine.Contracts;
+    using Common.Contracts.Managers;
+    using Common.Implementations.Managers;
 
     public class FileManagerTest
     {

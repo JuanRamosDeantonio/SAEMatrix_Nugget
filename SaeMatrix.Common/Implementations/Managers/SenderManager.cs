@@ -4,11 +4,12 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.Net;
 
-namespace SAE.Matrix.Common.Routine
+namespace SAE.Matrix.Common.Implementations.Managers
 {
     using Entities;
     using Common;
     using Contracts;
+    using SAE.Matrix.Common.Contracts.Managers;
 
     public class SenderManager : ISenderManager
     {
@@ -35,7 +36,7 @@ namespace SAE.Matrix.Common.Routine
                     if (complement != null) complement(client);
                     HttpResponseMessage responseMessage;
                     using (responseMessage = await client.SendAsync(requestMessage).ConfigureAwait(true))
-                    { 
+                    {
                         var contentResponse = await responseMessage.Content.ReadAsStringAsync();
                         ResponseBase<T> responseBase = ValidateResponse<T>(responseMessage, type, contentResponse);
                         responseMessage.Dispose();
@@ -89,7 +90,7 @@ namespace SAE.Matrix.Common.Routine
             if (string.IsNullOrEmpty(contentResponse))
             {
                 responseBase.Code = responseBase.Code == (int)HttpStatusCode.OK ? (int)HttpStatusCode.NoContent : (int)responseMessage.StatusCode;
-                responseBase.Data = default(T);
+                responseBase.Data = default;
                 responseBase.Message = $"Respuesta sin contenido";
             }
             else if (Guid.TryParse(contentResponseCopy.Replace("\"", ""), out _))
@@ -111,7 +112,7 @@ namespace SAE.Matrix.Common.Routine
             }
             else
             {
-                responseBase.Data = default(T);
+                responseBase.Data = default;
                 responseBase.Code = (int)HttpStatusCode.NotAcceptable;
                 responseBase.Message = "El contenido no se puede convertir al objeto esperado";
             }
