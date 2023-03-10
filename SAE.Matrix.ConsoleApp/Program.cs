@@ -42,7 +42,10 @@ try
         }
     };
 
-    var response = fileService.FilesUpload(model);
+    //var response = fileService.FilesUpload(model);
+    var response2 = fileService.ConsultFile(23530);
+    //var response3 = fileService.DeleteFile(new DeleteFileRequest() { idElemento = 1, idDocumento = 23530, usuarioRegistro = "Pruebas", maquinaRegistro = ":::" });
+    //var response3 = fileService.ConsultFiles(1, "Acta de posesion");
 
     Console.ReadKey();
 }

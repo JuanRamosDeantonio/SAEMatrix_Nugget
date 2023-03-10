@@ -43,21 +43,37 @@ namespace SAE.Matrix.Common.Implementations.Managers
             HttpRequestMessage requestMessage = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($@"{baseUrlService}/File?idDocumento={idDocumento}")
+                RequestUri = new Uri($@"{baseUrlService}/File/ConsultFile/{idDocumento}")
             };
 
             ResponseBase<ConsultFileResponse> result = await _senderManager.SendRequest<ConsultFileResponse>(requestMessage, "FileService");
             return result;
         }
 
-        public async Task<ResponseBase<bool>> DeleteFile(DeleteFileRequest model)
+        public async Task<ResponseBase<List<ConsultFilesResponse>>> ConsultFiles(int idElemento, string grupoDocumental)
         {
             string baseUrlService = _configuration.GetSection("Services:File").Value;
             //string baseUrlService = @"https://localhost:7120";
 
             HttpRequestMessage requestMessage = new HttpRequestMessage()
             {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri($@"{baseUrlService}/File/ConsultFiles/{idElemento}/{grupoDocumental}")
+            };
+
+            ResponseBase<List<ConsultFilesResponse>> result = await _senderManager.SendRequest<List<ConsultFilesResponse>>(requestMessage, "FileService");
+            return result;
+        }
+
+        public async Task<ResponseBase<bool>> DeleteFile(DeleteFileRequest model)
+        {
+            //string baseUrlService = _configuration.GetSection("Services:File").Value;
+            string baseUrlService = @"https://localhost:7120";
+
+            HttpRequestMessage requestMessage = new HttpRequestMessage()
+            {
                 Method = HttpMethod.Delete,
+                Content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, @"application/json"),
                 RequestUri = new Uri($@"{baseUrlService}/File")
             };
 
