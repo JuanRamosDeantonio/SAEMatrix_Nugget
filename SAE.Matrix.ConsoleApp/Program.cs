@@ -10,8 +10,11 @@ Console.WriteLine("Hello, World!");
 
 try
 {
-    IConfiguration configuration = new ConfigurationBuilder()
-    .Build();
+    ConfigurationBuilder configuration = new ConfigurationBuilder();
+    configuration.AddInMemoryCollection(new Dictionary<string, string>()
+            {
+                { "Services:File", "https://localhost:7120" }
+            });
 
     var builder = new HostBuilder()
                .ConfigureServices((hostContext, services) =>
@@ -20,7 +23,7 @@ try
                    services.AddHttpContextAccessor();
                    services.AddScoped<IFileManager, FileManager>();
                    services.AddScoped<ISenderManager, SenderManager>();
-                   services.AddSingleton<IConfiguration>(configuration);
+                   services.AddSingleton<IConfiguration>(configuration.Build());
                }).UseConsoleLifetime();
 
     var host = builder.Build();
@@ -43,9 +46,9 @@ try
     };
 
     //var response = fileService.FilesUpload(model);
-    var response2 = fileService.ConsultFile(23530);
+    //var response2 = fileService.ConsultFile(23530);
     //var response3 = fileService.DeleteFile(new DeleteFileRequest() { idElemento = 1, idDocumento = 23530, usuarioRegistro = "Pruebas", maquinaRegistro = ":::" });
-    //var response3 = fileService.ConsultFiles(1, "Acta de posesion");
+    var response3 = fileService.ConsultFiles(1, "Acta de posesion");
 
     Console.ReadKey();
 }

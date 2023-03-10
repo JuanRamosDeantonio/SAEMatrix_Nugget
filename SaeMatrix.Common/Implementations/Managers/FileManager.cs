@@ -22,13 +22,12 @@ namespace SAE.Matrix.Common.Implementations.Managers
         public async Task<ResponseBase<bool>> FilesUpload(UploadFilesRequest model)
         {
             string baseUrlService = _configuration.GetSection("Services:File").Value;
-            //string baseUrlService = @"https://localhost:7120";
 
             HttpRequestMessage requestMessage = new HttpRequestMessage()
             {
                 Method = HttpMethod.Post,
                 Content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, @"application/json"),
-                RequestUri = new Uri($@"{baseUrlService}/File")
+                RequestUri = new Uri($@"{baseUrlService}/File/FilesUpload")
             };
 
             ResponseBase<bool> result = await _senderManager.SendRequest<bool>(requestMessage, "FileService");
@@ -38,7 +37,6 @@ namespace SAE.Matrix.Common.Implementations.Managers
         public async Task<ResponseBase<ConsultFileResponse>> ConsultFile(int idDocumento)
         {
             string baseUrlService = _configuration.GetSection("Services:File").Value;
-            //string baseUrlService = @"https://localhost:7120";
 
             HttpRequestMessage requestMessage = new HttpRequestMessage()
             {
@@ -53,7 +51,6 @@ namespace SAE.Matrix.Common.Implementations.Managers
         public async Task<ResponseBase<List<ConsultFilesResponse>>> ConsultFiles(int idElemento, string grupoDocumental)
         {
             string baseUrlService = _configuration.GetSection("Services:File").Value;
-            //string baseUrlService = @"https://localhost:7120";
 
             HttpRequestMessage requestMessage = new HttpRequestMessage()
             {
@@ -67,14 +64,13 @@ namespace SAE.Matrix.Common.Implementations.Managers
 
         public async Task<ResponseBase<bool>> DeleteFile(DeleteFileRequest model)
         {
-            //string baseUrlService = _configuration.GetSection("Services:File").Value;
-            string baseUrlService = @"https://localhost:7120";
+            string baseUrlService = _configuration.GetSection("Services:File").Value;
 
             HttpRequestMessage requestMessage = new HttpRequestMessage()
             {
                 Method = HttpMethod.Delete,
                 Content = new StringContent(JsonConvert.SerializeObject(model), Encoding.UTF8, @"application/json"),
-                RequestUri = new Uri($@"{baseUrlService}/File")
+                RequestUri = new Uri($@"{baseUrlService}/File/DeleteFile")
             };
 
             ResponseBase<bool> result = await _senderManager.SendRequest<bool>(requestMessage, "FileService");
