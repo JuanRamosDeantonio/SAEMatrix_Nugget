@@ -50,10 +50,8 @@ namespace SAE.Matrix.CommonTest.Managers.Implementations
             {
                 IsBodyHtml = true,
                 Subject = "Pruebas",
-                //From = "AdministradorIMS@saesas.gov.co",
-                //From = "indraprojecttesting@gmail.com",
                 From = "indraprojecttesting@hotmail.com",
-                To = "oabetancourt@indracompany.com",
+                To = "rjmaestre@indracompany.com;oabetancourt@indracompany.com",
                 Body = "Probando NUnit Test"
             };
 
