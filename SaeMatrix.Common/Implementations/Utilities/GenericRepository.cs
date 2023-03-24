@@ -90,6 +90,23 @@ namespace SAE.Matrix.Common.Implementations.Utilities
 
         }
 
+        public int ReadCount(Expression<Func<TEntity, bool>> expression)
+        {
+            try
+            {
+                using var scope = _serviceScope.CreateScope();
+                var context = scope.ServiceProvider.GetRequiredService<TContext>();
+                var query = context.Set<TEntity>().AsNoTracking();
+                return query.Where(expression).Count();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
+
+        }
+
         public async Task<PagedOneResult<TEntity>> ReadOne(Expression<Func<TEntity, bool>> expression)
         {
             try

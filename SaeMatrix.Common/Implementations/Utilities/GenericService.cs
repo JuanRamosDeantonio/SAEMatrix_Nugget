@@ -88,6 +88,19 @@ namespace SAE.Matrix.Common.Implementations.Utilities
                 return GenericUtility.ResponseBaseCatch<List<TEntity>>(true, ex, HttpStatusCode.InternalServerError);
             }
         }
+        public ResponseBase<int> ReadCount(Expression<Func<TEntity, bool>> expression)
+        {
+            ResponseBase<int> response = new ResponseBase<int>();
+            try
+            {
+                response.Data = _repository.ReadCount(expression);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                return GenericUtility.ResponseBaseCatch<int>(true, ex, HttpStatusCode.InternalServerError);
+            }
+        }
         public async Task<ResponseBase<PagedResult<TEntity>>> ReadWithInclude(Expression<Func<TEntity, bool>> expression, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include)
         {
             ResponseBase<PagedResult<TEntity>> response = new ResponseBase<PagedResult<TEntity>>();

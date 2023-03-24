@@ -57,6 +57,13 @@ namespace SAE.Matrix.Common.Contracts.Utilities
         Task<List<TEntity>> Read(Expression<Func<TEntity, bool>> expression);
 
         /// <summary>
+        /// Filtra y obtiene el total de los registros de una entidad sin paginar.
+        /// </summary>
+        /// <param name="expression">Expresion que representa el filtro de la entidad</param>
+        /// <returns>Total de registros de la entidad</returns>
+        int ReadCount(Expression<Func<TEntity, bool>> expression);
+
+        /// <summary>
         /// Filtra y lista un registro de una entidad sin paginar.
         /// </summary>
         /// <param name="expression">Expresion que representa el filtro de la entidad</param>
